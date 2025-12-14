@@ -1,0 +1,23 @@
+[package]
+name = "sessao-compiler"
+description = "Code generation for Sessão protocols"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+documentation.workspace = true
+keywords.workspace = true
+categories.workspace = true
+authors.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+sessao-lang.workspace = true
+sessao-core.workspace = true
+thiserror.workspace = true
+quote.workspace = true
+proc-macro2.workspace = true
+
+[dev-dependencies]
+insta.workspace = true

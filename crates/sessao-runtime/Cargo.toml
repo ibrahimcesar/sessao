@@ -1,0 +1,24 @@
+[package]
+name = "sessao-runtime"
+description = "Rust runtime library for Sessão protocols"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+documentation.workspace = true
+keywords.workspace = true
+categories.workspace = true
+authors.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+sessao-core.workspace = true
+thiserror.workspace = true
+tokio.workspace = true
+async-trait.workspace = true
+futures.workspace = true
+serde.workspace = true
+
+[dev-dependencies]
+insta.workspace = true

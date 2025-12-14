@@ -1,0 +1,68 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/sessao-lang",
+    "crates/sessao-core",
+    "crates/sessao-compiler",
+    "crates/sessao-runtime",
+    "crates/sessao-cli",
+    "crates/sessao-analyzer",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+repository = "https://github.com/ibrahimcesar/sessao"
+homepage = "https://github.com/ibrahimcesar/sessao"
+documentation = "https://docs.rs/sessao"
+keywords = ["session-types", "protocol", "networking", "gamedev", "multiplayer"]
+categories = ["game-development", "network-programming", "development-tools"]
+authors = ["Ibrahim Cesar <ibrahim@ibrahimcesar.com>"]
+rust-version = "1.75"
+
+[workspace.dependencies]
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Async runtime
+tokio = { version = "1.0", features = ["full"] }
+async-trait = "0.1"
+futures = "0.3"
+
+# Error handling
+thiserror = "1.0"
+anyhow = "1.0"
+miette = { version = "7.0", features = ["fancy"] }
+
+# CLI
+clap = { version = "4.0", features = ["derive", "env"] }
+
+# Logging/tracing
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# Code generation
+quote = "1.0"
+proc-macro2 = "1.0"
+
+# Testing
+insta = { version = "1.0", features = ["yaml"] }
+proptest = "1.0"
+
+# Internal crates
+sessao-lang = { path = "crates/sessao-lang", version = "0.1.0" }
+sessao-core = { path = "crates/sessao-core", version = "0.1.0" }
+sessao-compiler = { path = "crates/sessao-compiler", version = "0.1.0" }
+sessao-runtime = { path = "crates/sessao-runtime", version = "0.1.0" }
+sessao-analyzer = { path = "crates/sessao-analyzer", version = "0.1.0" }
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
+
+[profile.dev]
+# Faster incremental builds
+incremental = true

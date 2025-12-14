@@ -1,0 +1,26 @@
+[package]
+name = "sessao-lang"
+description = "Protocol Definition Language parser and AST for Sessão"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+documentation.workspace = true
+keywords.workspace = true
+categories.workspace = true
+authors.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+thiserror.workspace = true
+miette.workspace = true
+serde = { workspace = true, optional = true }
+
+[dev-dependencies]
+insta.workspace = true
+proptest.workspace = true
+
+[features]
+default = []
+serde = ["dep:serde"]

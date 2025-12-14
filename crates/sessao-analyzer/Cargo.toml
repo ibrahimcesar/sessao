@@ -1,0 +1,22 @@
+[package]
+name = "sessao-analyzer"
+description = "Protocol analysis for Sessão"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+documentation.workspace = true
+keywords.workspace = true
+categories.workspace = true
+authors.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+sessao-lang.workspace = true
+sessao-core.workspace = true
+thiserror.workspace = true
+miette.workspace = true
+
+[dev-dependencies]
+insta.workspace = true

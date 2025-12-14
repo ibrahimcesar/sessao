@@ -1,0 +1,28 @@
+[package]
+name = "sessao-cli"
+description = "Command-line tool for Sessão"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+documentation.workspace = true
+keywords.workspace = true
+categories.workspace = true
+authors.workspace = true
+rust-version.workspace = true
+
+[[bin]]
+name = "sessao"
+path = "src/main.rs"
+
+[dependencies]
+sessao-lang.workspace = true
+sessao-core.workspace = true
+sessao-compiler.workspace = true
+sessao-analyzer.workspace = true
+clap.workspace = true
+anyhow.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+miette.workspace = true
